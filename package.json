@@ -1,9 +1,9 @@
 {
   "name": "netlicesnsing",
-  "version": "1.0.0",
-  "description": "NetLicesnsing to Zapier connector.",
+  "version": "0.9.0",
+  "description": "Labs64 NetLicesnsing / Zapier integration",
   "repository": "zapier/zapier-platform-example-app-minimal",
-  "homepage": "https://netlicensing.io/",
+  "homepage": "https://netlicensing.io",
   "author": "Yushkevich Andrei <yushkevich@me.com>",
   "license": "BSD-3-Clause",
   "main": "index.js",
