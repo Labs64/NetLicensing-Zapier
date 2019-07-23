@@ -2,7 +2,7 @@
   "name": "netlicesnsing",
   "version": "0.9.0",
   "description": "Labs64 NetLicesnsing / Zapier integration",
-  "repository": "zapier/zapier-platform-example-app-minimal",
+  "repository": "github:Labs64/NetLicensing-Zapier",
   "homepage": "https://netlicensing.io",
   "author": "Yushkevich Andrei <yushkevich@me.com>",
   "license": "BSD-3-Clause",
