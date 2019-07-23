@@ -1,12 +1,8 @@
 docs
 *.log
-.environment
-.env
 .DS_Store
 node_modules/
 build/
 npm-debug.log
-.build*
 .idea
 .iml
-index.html
