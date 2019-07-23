@@ -8,4 +8,5 @@ build/
 npm-debug.log
 .build*
 .idea
+.iml
 index.html
