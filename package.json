@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "netlicensing-client": "^1.2.15",
-    "zapier-platform-core": "8.0.1"
+    "zapier-platform-core": "8.2.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
