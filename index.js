@@ -2,14 +2,16 @@ const { version: platformVersion } = require('zapier-platform-core');
 const { version } = require('./package.json');
 
 // auth (basic)
-const authentication = require('./authentication/authentication');
+const authentication = require('./authentication/Authentication');
 // triggers
-const new_product = require('./triggers/new_product');// TODO: camel case
-const new_licensee = require('./triggers/new_licensee');// TODO: camel case
+const newProduct = require('./triggers/NewProduct');
+const newLicensee = require('./triggers/NewLicensee');
 // searches
-const find_licensee = require('./searches/find_licensee');// TODO: camel case
+const findLicensee = require('./searches/FindLicensee');
+const findProduct = require('./searches/FindProduct');
 // creates
-const create_product = require('./creates/create_product');// TODO: camel case
+const createProduct = require('./creates/CreateProduct');
+const createLicensee = require('./creates/CreateLicensee');
 
 // We can roll up all our behaviors in an App.
 const App = {
@@ -18,6 +20,7 @@ const App = {
     version,
 
     platformVersion,
+
     // basic authentication
     authentication,
 
@@ -31,17 +34,44 @@ const App = {
 
     // If you want your trigger to show up, you better include it here!
     triggers: {
-        [new_product.key]: new_product, // TODO: camel case
-        [new_licensee.key]: new_licensee, // TODO: camel case
+        [newProduct.key]: newProduct,
+        [newLicensee.key]: newLicensee,
     },
     // If you want your searches to show up, you better include it here!
     searches: {
-        [find_licensee.key]: find_licensee, // TODO: camel case
+        [findLicensee.key]: findLicensee,
+        [findProduct.key]: findProduct,
     },
 
     // If you want your creates to show up, you better include it here!
     creates: {
-        [create_product.key]: create_product, // TODO: camel case
+        [createProduct.key]: createProduct,
+        [createLicensee.key]: createLicensee,
+    },
+
+    searchOrCreates: {
+        [findProduct.key]: { // the key must match the search
+            key: findProduct.key, // same as above
+            display: {
+                // the label goes up in sidebar
+                // see: https://cdn.zapier.com/storage/photos/04f7951bda0c43dc80eb630251724336.png
+                label: 'Search Product or Create one',
+                description: 'If not exist then create one.',
+            },
+            search: findProduct.key,
+            create: createProduct.key,
+        },
+        [findLicensee.key]: { // the key must match the search
+            key: findLicensee.key, // same as above
+            display: {
+                // the label goes up in sidebar
+                // see: https://cdn.zapier.com/storage/photos/04f7951bda0c43dc80eb630251724336.png
+                label: 'Search Licensee or Create one',
+                description: 'If not exist then create one.',
+            },
+            search: findLicensee.key,
+            create: createLicensee.key,
+        },
     },
 };
 

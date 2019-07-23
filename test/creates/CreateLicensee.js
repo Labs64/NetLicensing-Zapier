@@ -15,7 +15,7 @@ describe('My App', () => {
             },
         };
 
-        appTester(App.triggers.new_licensee.operation.perform, bundle)
+        appTester(App.creates.createLicensee.operation.perform, bundle)
             .then(() => {
                 done();
             })

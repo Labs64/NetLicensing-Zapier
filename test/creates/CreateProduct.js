@@ -15,7 +15,7 @@ describe('My App', () => {
             },
         };
 
-        appTester(App.creates.create_product.operation.perform, bundle)
+        appTester(App.creates.createProduct.operation.perform, bundle)
             .then(() => {
                 done();
             })

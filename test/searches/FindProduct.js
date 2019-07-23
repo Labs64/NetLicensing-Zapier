@@ -15,7 +15,7 @@ describe('My App', () => {
             },
         };
 
-        appTester(App.triggers.new_product.operation.perform, bundle)
+        appTester(App.searches.findProduct.operation.perform, bundle)
             .then(() => {
                 done();
             })

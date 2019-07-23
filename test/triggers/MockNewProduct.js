@@ -29,7 +29,7 @@ describe('My App', () => {
                 { name: 'name 2', directions: 'directions 2', id: 2 },
             ]);
 
-        appTester(App.triggers.new_product.operation.perform, bundle)
+        appTester(App.triggers.newProduct.operation.perform, bundle)
             .then((result) => {
                 console.log(result);
                 done();

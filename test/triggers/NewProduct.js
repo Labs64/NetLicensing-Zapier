@@ -15,7 +15,7 @@ describe('My App', () => {
             },
         };
 
-        appTester(App.searches.find_licensee.operation.perform, bundle)
+        appTester(App.triggers.newProduct.operation.perform, bundle)
             .then(() => {
                 done();
             })
