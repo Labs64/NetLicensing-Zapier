@@ -4,8 +4,8 @@
   "description": "Labs64 NetLicesnsing / Zapier integration",
   "repository": "github:Labs64/NetLicensing-Zapier",
   "homepage": "https://netlicensing.io",
-  "author": "Yushkevich Andrei <yushkevich@me.com>",
-  "license": "BSD-3-Clause",
+  "author": "Yushkevich Andrei <andrew.yushkevich@labs64.de>",
+  "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
