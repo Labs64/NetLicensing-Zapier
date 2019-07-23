@@ -1,10 +1,14 @@
 language: node_js
 node_js:
-- node
-- '8'
-- '7'
-- '6'
+  - node
+  - '8'
+  - '7'
+  - '6'
+before_script: 'npm install -g zapier-platform-cli'
 services:
-- xvfb
+  - xvfb
 script:
-- npm run test-for-travis
+  'zapier test'
+notifications:
+  email: false
+

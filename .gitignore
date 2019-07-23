@@ -1,3 +1,7 @@
+docs
+*.log
+.environment
+.env
 .DS_Store
 node_modules/
 npm-debug.log
