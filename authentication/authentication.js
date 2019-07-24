@@ -17,7 +17,9 @@ const test = (z) => {
         params: {},
     }).then((response) => {
         if (response.status === 401) {
-            throw new Error('The username and/or password you supplied is incorrect');
+            throw new Error(constants.authentication.LOGIN_FAILED_TEXT);
+        } else if (response.status >= 500) {
+            throw new Error(constants.authentication.SERVICE_UNAVAILABLE_TEXT);
         }
         return response;
     });

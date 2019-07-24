@@ -1,7 +1,10 @@
 module.exports = Object.freeze({
     BASE_HOST: 'https://go.netlicensing.io',
     BASE_PATH: '/core/v2/rest',
-
+    authentication: {
+        LOGIN_FAILED_TEXT: 'The username and/or password you supplied is incorrect',
+        SERVICE_UNAVAILABLE_TEXT: 'Service temporary unavailable',
+    },
     triggers: {
         NEW_LICENSEE_NOUN: 'Licensee',
         NEW_LICENSEE_LABEL: 'New Licensee',
@@ -33,7 +36,7 @@ module.exports = Object.freeze({
         CREATE_LICENSEE_DESCRIPTION: 'Creates a new licensee.',
 
         CREATE_PRODUCT_NOUN: 'Product',
-        CREATE_PRODUCT_LABEL: 'New Product',
+        CREATE_PRODUCT_LABEL: 'Create Product',
         CREATE_PRODUCT_DESCRIPTION: 'Creates a new product.',
     },
 });
