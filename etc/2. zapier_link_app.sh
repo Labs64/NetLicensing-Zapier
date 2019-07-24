@@ -1,6 +1,4 @@
 #!/bin/sh
-echo 'Welcome to Labs64 NetLicensing / Zapier Link App!'
-
-cd ../
+echo 'NetLicensing / Zapier integration: link app'
 
 zapier link

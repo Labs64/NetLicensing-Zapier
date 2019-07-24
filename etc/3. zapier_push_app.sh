@@ -1,6 +1,4 @@
 #!/bin/sh
-echo 'Welcome to Labs64 NetLicensing / Zapier Push App!'
-
-cd ../
+echo 'NetLicensing / Zapier integration: push app'
 
 zapier push

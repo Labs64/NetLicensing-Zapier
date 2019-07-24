@@ -2,7 +2,7 @@ const { version: platformVersion } = require('zapier-platform-core');
 const { version } = require('./package.json');
 
 // auth (basic)
-const authentication = require('./authentication/Authentication');
+const authentication = require('./authentication/BasicAuth');
 // triggers
 const newProduct = require('./triggers/NewProduct');
 const newLicensee = require('./triggers/NewLicensee');

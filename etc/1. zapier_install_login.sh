@@ -1,7 +1,5 @@
 #!/bin/sh
-echo 'Welcome to Labs64 NetLicensing / Zapier integration!'
-
-cd ../
+echo 'NetLicensing / Zapier integration: initialize environment'
 
 # install the CLI globally
 npm install -g zapier-platform-cli
