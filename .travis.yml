@@ -5,8 +5,9 @@ node_js:
 before_script: 'npm install -g zapier-platform-cli'
 script:
   - npm install -g zapier-platform-cli
+  #- npm install axios-mock-adapter --save-dev
   - npm install
   - zapier validate
-  #- zapier test
+  - zapier test
 notifications:
   email: false
