@@ -1,3 +1,5 @@
+const constants = require('../config/Constants');
+
 const test = (z) => {
     // Normally you want to make a request to an endpoint that is either specifically designed to test auth, or one that
     // every user will have access to, such as an account or profile endpoint like /me.
@@ -7,7 +9,7 @@ const test = (z) => {
     // This method can return any truthy value to indicate the credentials are valid.
     // Raise an error to show
     return z.request({
-        url: 'https://go.netlicensing.io/core/v2/rest/utility/licensingModels',
+        url: `${constants.BASE_HOST + constants.BASE_PATH}/utility/licensingModels`,
         method: 'GET',
         headers: {
             Accept: 'application/json',

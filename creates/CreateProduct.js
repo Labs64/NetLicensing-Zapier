@@ -1,4 +1,5 @@
 const { ProductService, Product, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
+const constants = require('../config/Constants');
 
 const createProduct = async (z, bundle) => {
     const context = new Context();
@@ -31,10 +32,10 @@ module.exports = {
 
     // You'll want to provide some helpful display labels and descriptions
     // for users. Zapier will put them into the UX.
-    noun: 'Product',
+    noun: constants.creates.CREATE_PRODUCT_NOUN,
     display: {
-        label: 'Create Product',
-        description: 'Creates a new product.',
+        label: constants.creates.CREATE_PRODUCT_LABEL,
+        description: constants.creates.CREATE_PRODUCT_DESCRIPTION,
     },
 
     // `operation` is where the business logic goes.

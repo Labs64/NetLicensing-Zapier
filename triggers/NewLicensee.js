@@ -1,27 +1,10 @@
-// const { LicenseeService, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
-//
-//
-// const listLicensees = async (z, bundle) => {
-//     const context = new Context();
-//     context.setBaseUrl('https://go.netlicensing.io/core/v2/rest');
-//     context.setUsername(bundle.authData.username);
-//     context.setPassword(bundle.authData.password);
-//     context.setSecurityMode(Constants.BASIC_AUTHENTICATION);
-//
-//     z.console.log(`page: ${bundle.meta.page}`);
-//
-//     let page = bundle.meta.page;
-//     const items = 10;
-//     const list = await LicenseeService.list(context, { page, items });
-//
-//     return list.map(licensee => ({ id: licensee.getNumber(), ...licensee.getProperties(), ...bundle }));
-// };
+const constants = require('../config/Constants');
 
 const listLicensees = (z, bundle) => {
     // You can build requests and our client will helpfully inject all the variables
     // you need to complete. You can also register middleware to control this.
     const options = {
-        url: 'https://go.netlicensing.io/core/v2/rest/licensee',
+        url: `${constants.BASE_HOST + constants.BASE_PATH}/licensee`,
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -55,10 +38,10 @@ const listLicensees = (z, bundle) => {
 // into the App definition at the end.
 module.exports = {
     key: 'new_licensee',
-    noun: 'Licensee',
+    noun: constants.triggers.NEW_LICENSEE_NOUN,
     display: {
-        label: 'New Licensee',
-        description: 'Triggers when a new licensee is created.',
+        label: constants.triggers.NEW_LICENSEE_LABEL,
+        description: constants.triggers.NEW_LICENSEE_DESCRIPTION,
     },
 
     // `operation` is where the business logic goes.

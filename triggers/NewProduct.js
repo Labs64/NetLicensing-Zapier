@@ -1,8 +1,10 @@
+const constants = require('../config/Constants');
+
 const listProducts = (z, bundle) => {
     // You can build requests and our client will helpfully inject all the variables
     // you need to complete. You can also register middleware to control this.
     const options = {
-        url: 'https://go.netlicensing.io/core/v2/rest/product',
+        url: `${constants.BASE_HOST + constants.BASE_PATH}/product`,
         method: 'GET',
         headers: {
             Accept: 'application/json',
@@ -36,10 +38,10 @@ const listProducts = (z, bundle) => {
 // into the App definition at the end.
 module.exports = {
     key: 'new_product',
-    noun: 'Product',
+    noun: constants.triggers.NEW_PRODUCT_NOUN,
     display: {
-        label: 'New Product',
-        description: 'Triggers when a new product is created.',
+        label: constants.triggers.NEW_PRODUCT_LABEL,
+        description: constants.triggers.NEW_PRODUCT_DESCRIPTION,
     },
 
     // `operation` is where the business logic goes.

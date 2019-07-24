@@ -7,11 +7,14 @@ const authentication = require('./authentication/Authentication');
 const newProduct = require('./triggers/NewProduct');
 const newLicensee = require('./triggers/NewLicensee');
 // searches
-const findLicensee = require('./searches/FindLicensee');
 const findProduct = require('./searches/FindProduct');
+const findLicensee = require('./searches/FindLicensee');
 // creates
 const createProduct = require('./creates/CreateProduct');
 const createLicensee = require('./creates/CreateLicensee');
+// search or creates
+const searchOrCreateProduct = require('./search_or_creates/SearchOrCreateProduct');
+const searchOrCreateLicensee = require('./search_or_creates/SearchOrCreateLicensee');
 
 // We can roll up all our behaviors in an App.
 const App = {
@@ -50,28 +53,8 @@ const App = {
     },
 
     searchOrCreates: {
-        [findProduct.key]: { // the key must match the search
-            key: findProduct.key, // same as above
-            display: {
-                // the label goes up in sidebar
-                // see: https://cdn.zapier.com/storage/photos/04f7951bda0c43dc80eb630251724336.png
-                label: 'Search Product or Create one',
-                description: 'If not exist then create one.',
-            },
-            search: findProduct.key,
-            create: createProduct.key,
-        },
-        [findLicensee.key]: { // the key must match the search
-            key: findLicensee.key, // same as above
-            display: {
-                // the label goes up in sidebar
-                // see: https://cdn.zapier.com/storage/photos/04f7951bda0c43dc80eb630251724336.png
-                label: 'Search Licensee or Create one',
-                description: 'If not exist then create one.',
-            },
-            search: findLicensee.key,
-            create: createLicensee.key,
-        },
+        [searchOrCreateProduct.key]: searchOrCreateProduct,
+        [searchOrCreateLicensee.key]: searchOrCreateLicensee,
     },
 };
 

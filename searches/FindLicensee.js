@@ -1,4 +1,5 @@
 const { LicenseeService, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
+const constants = require('../config/Constants');
 
 const getLicensee = async (z, bundle) => {
     const context = new Context();
@@ -16,10 +17,10 @@ module.exports = {
 
     // You'll want to provide some helpful display labels and descriptions
     // for users. Zapier will put them into the UX.
-    noun: 'Licensee',
+    noun: constants.searches.FIND_LICENSEE_NOUN,
     display: {
-        label: 'Find a Licensee',
-        description: 'Search for Licensee by number.',
+        label: constants.searches.FIND_LICENSEE_LABEL,
+        description: constants.searches.FIND_LICENSEE_DESCRIPTION,
     },
 
     // `operation` is where we make the call to your API to do the search
