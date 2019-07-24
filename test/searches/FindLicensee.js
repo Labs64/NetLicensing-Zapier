@@ -6,7 +6,7 @@ const App = require('../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('My App', () => {
+describe('FindLicensee', () => {
     it('should load recipes', (done) => {
         const bundle = {
             authData: {

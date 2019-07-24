@@ -6,7 +6,7 @@ const zapier = require('zapier-platform-core');
 const App = require('../index');
 const appTester = zapier.createAppTester(App);
 
-describe('My App', () => {
+describe('NetLicensingApp', () => {
 
   it('should test something', (done) => {
     const x = 1;

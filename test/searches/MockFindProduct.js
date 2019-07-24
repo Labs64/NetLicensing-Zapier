@@ -15,7 +15,7 @@ const App = require('../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('My App', () => {
+describe('FindProductMock', () => {
     it('should load recipes', async (done) => {
         const mock = new AxiosMockAdapter(axios);
 
