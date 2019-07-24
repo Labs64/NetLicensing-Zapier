@@ -1,5 +1,5 @@
 #!/bin/sh
-echo 'Welcome to NetLicensing Zapier integration!'
+echo 'Welcome to Labs64 NetLicensing / Zapier integration!'
 
 cd ../
 
