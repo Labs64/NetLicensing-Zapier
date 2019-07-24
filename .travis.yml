@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - node
   - '8'
-before_script: 'npm install -g zapier-platform-cli'
-script:
+before_script:
   - npm install -g zapier-platform-cli
+script:
   - npm install
   - zapier validate
   - zapier test
