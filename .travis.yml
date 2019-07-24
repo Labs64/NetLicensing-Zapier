@@ -3,8 +3,9 @@ node_js:
   - node
   - '8'
 before_script: 'npm install -g zapier-platform-cli'
-#script:
-#  'zapier test'
+script:
+  - npm install -g zapier-platform-cli
+  - npm install
+  #- zapier test
 notifications:
   email: false
-
