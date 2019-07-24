@@ -6,6 +6,7 @@ before_script: 'npm install -g zapier-platform-cli'
 script:
   - npm install -g zapier-platform-cli
   - npm install
+  - zapier validate
   #- zapier test
 notifications:
   email: false
