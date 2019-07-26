@@ -17,6 +17,7 @@ const listLicensees = (z, bundle) => {
     return z.request(options)
         .then((response) => {
             response.throwForStatus();
+
             const results = z.JSON.parse(response.content).items.item;
 
             return results.map((item) => {

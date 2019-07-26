@@ -1,6 +1,8 @@
 module.exports = Object.freeze({
     BASE_HOST: 'https://go.netlicensing.io',
     BASE_PATH: '/core/v2/rest',
+    NLIC_USERNAME: 'demo',
+    NLIC_PASSWORD: 'demo',
     authentication: {
         LOGIN_FAILED_TEXT: 'The username and/or password you supplied is incorrect',
         SERVICE_UNAVAILABLE_TEXT: 'Service temporary unavailable',

@@ -2,17 +2,19 @@ require('should/should');
 
 const zapier = require('zapier-platform-core/index');
 
-const App = require('../../index');
+const constants = require('../../../config/Constants');
+
+const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('basic auth app', () => {
-    it('automatically has Authorize Header add', (done) => {
+describe('Basic Auth', () => {
+    it('Success auth', (done) => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
-                username: 'demo',
-                password: 'demo',
+                username: constants.NLIC_USERNAME,
+                password: constants.NLIC_PASSWORD,
             },
         };
 
@@ -24,7 +26,7 @@ describe('basic auth app', () => {
             .catch(done);
     });
 
-    it('fails on bad auth', (done) => {
+    it('Failed auth', (done) => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {

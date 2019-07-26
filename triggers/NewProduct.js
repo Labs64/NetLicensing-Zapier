@@ -10,7 +10,7 @@ const listProducts = (z, bundle) => {
             Accept: 'application/json',
         },
         params: {
-            'filter=page=': bundle.meta.page,
+            'filter=page=': bundle.meta.page, // the condition only for test
         },
     };
 
