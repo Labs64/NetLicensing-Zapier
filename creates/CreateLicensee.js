@@ -1,7 +1,7 @@
 const { LicenseeService, Licensee, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
 const constants = require('../config/Constants');
 
-const createProduct = async (z, bundle) => {
+const createLicensee = async (z, bundle) => {
     const context = new Context();
     context.setUsername(bundle.authData.username);
     context.setPassword(bundle.authData.password);
@@ -42,7 +42,7 @@ module.exports = {
             { key: 'number', required: false, type: 'string' },
             { key: 'active', required: false, type: 'boolean' },
         ],
-        perform: createProduct,
+        perform: createLicensee,
 
         // In cases where Zapier needs to show an example record to the user, but we are unable to get a live example
         // from the API, Zapier will fallback to this hard-coded sample. It should reflect the data structure of
