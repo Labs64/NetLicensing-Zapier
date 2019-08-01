@@ -12,8 +12,8 @@ You can use Zapier to do Labs64 NetLicensing Automation.
 Please refer to the NetLicensing triggers, searches and actions available at [Zapier](https://zapier.com/apps/netlicensing).
 
 ### Triggers
-- *New Licensee* - Triggers when a new licensee is created
 - *New Product* - Triggers when a new product is created
+- *New Licensee* - Triggers when a new licensee is created
 
 ### Searches
 - *Find a Product* - Search a Product by its number
