@@ -1,3 +1,3 @@
 ## 0.9.0
 
-* (New) Early Access version of Labs64 NetLicensing / Zapier integration
+* (New) Early Access version of NetLicensing / Zapier integration
