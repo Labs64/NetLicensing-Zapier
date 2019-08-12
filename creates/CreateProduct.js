@@ -20,6 +20,13 @@ const createProduct = async (z, bundle) => {
     if (bundle.inputData.licenseeAutoCreate !== undefined) {
         product.setLicenseeAutoCreate(bundle.inputData.licenseeAutoCreate);
     }
+    if (bundle.inputData.description !== undefined) {
+        product.setDescription(bundle.inputData.description);
+    }
+    if (bundle.inputData.licensingInfo !== undefined) {
+        product.setLicensingInfo(bundle.inputData.licensingInfo);
+    }
+
     product = await ProductService.create(context, product);
 
     return product.getProperties();
@@ -44,6 +51,8 @@ module.exports = {
             { key: 'active', required: false, type: 'boolean' },
             { key: 'version', required: false, type: 'string' },
             { key: 'licenseeAutoCreate', required: false, type: 'boolean' },
+            { key: 'description', required: false, type: 'string' },
+            { key: 'licensingInfo', required: false, type: 'string' },
         ],
         perform: createProduct,
 
@@ -57,6 +66,8 @@ module.exports = {
             active: true,
             version: '1.0',
             licenseeAutoCreate: true,
+            description: 'Product description',
+            licensingInfo: 'Product licensing info',
         },
 
         // If the resource can have fields that are custom on a per-user basis, define a function to fetch the custom
@@ -70,6 +81,8 @@ module.exports = {
             { key: 'active', label: 'Active' },
             { key: 'version', label: 'Version' },
             { key: 'licenseeAutoCreate', label: 'Licensee Auto Create' },
+            { key: 'description', label: 'Product description' },
+            { key: 'licensingInfo', label: 'Product licensing info' },
         ],
     },
 };

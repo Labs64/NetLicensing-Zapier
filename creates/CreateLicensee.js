@@ -15,6 +15,24 @@ const createLicensee = async (z, bundle) => {
     if (bundle.inputData.active !== undefined) {
         licensee.setActive(bundle.inputData.active);
     }
+    if (bundle.inputData.email !== undefined) {
+        licensee.addProperty('email', bundle.inputData.email);
+    }
+    if (bundle.inputData.address1 !== undefined) {
+        licensee.addProperty('address1', bundle.inputData.address1);
+    }
+    if (bundle.inputData.zip !== undefined) {
+        licensee.addProperty('zip', bundle.inputData.zip);
+    }
+    if (bundle.inputData.country !== undefined) {
+        licensee.addProperty('country', bundle.inputData.country);
+    }
+    if (bundle.inputData.companyName !== undefined) {
+        licensee.addProperty('companyName', bundle.inputData.companyName);
+    }
+    if (bundle.inputData.fullName !== undefined) {
+        licensee.addProperty('fullName', bundle.inputData.fullName);
+    }
     licensee = await LicenseeService.create(context, bundle.inputData.productNumber, licensee);
 
     return licensee.getProperties();
@@ -38,6 +56,12 @@ module.exports = {
             { key: 'name', required: false, type: 'string' },
             { key: 'number', required: false, type: 'string' },
             { key: 'active', required: false, type: 'boolean' },
+            { key: 'email', required: false, type: 'string' },
+            { key: 'address1', required: false, type: 'string' },
+            { key: 'zip', required: false, type: 'string' },
+            { key: 'country', required: false, type: 'string' },
+            { key: 'companyName', required: false, type: 'string' },
+            { key: 'fullName', required: false, type: 'string' },
         ],
         perform: createLicensee,
 
@@ -50,6 +74,12 @@ module.exports = {
             number: 'P9F6UGCXK',
             active: true,
             productNumber: 'productNumber',
+            email: 'test@netlicensing.com',
+            address1: 'Radlkoferstraße 2',
+            zip: '81373',
+            country: 'Germany',
+            companyName: 'Company name',
+            fullName: 'Full name',
         },
 
         // If the resource can have fields that are custom on a per-user basis, define a function to fetch the custom
@@ -62,6 +92,12 @@ module.exports = {
             { key: 'number', label: 'Number' },
             { key: 'active', label: 'Active' },
             { key: 'productNumber', label: 'Product number' },
+            { key: 'email', label: 'Email' },
+            { key: 'address1', label: 'Address' },
+            { key: 'zip', label: 'ZIP' },
+            { key: 'country', label: 'Country' },
+            { key: 'companyName', label: 'Company name' },
+            { key: 'fullName', label: 'Full name' },
         ],
     },
 };
