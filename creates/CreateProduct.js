@@ -1,11 +1,9 @@
-const { ProductService, Product, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
+const { ProductService, Product } = require('netlicensing-client/dist/netlicensing-client.node');
 const constants = require('../config/Constants');
+const getContext = require('../utils/getContext');
 
 const createProduct = async (z, bundle) => {
-    const context = new Context();
-    context.setUsername(bundle.authData.username);
-    context.setPassword(bundle.authData.password);
-    context.setSecurityMode(Constants.BASIC_AUTHENTICATION);
+    const context = getContext(bundle);
 
     let product = new Product()
         .setName(bundle.inputData.name);

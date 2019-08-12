@@ -1,14 +1,11 @@
-const { LicenseeService, Licensee, Context, Constants } = require('netlicensing-client/dist/netlicensing-client.node');
+const { LicenseeService, Licensee } = require('netlicensing-client/dist/netlicensing-client.node');
 const constants = require('../config/Constants');
+const getContext = require('../utils/getContext');
 
 const createLicensee = async (z, bundle) => {
-    const context = new Context();
-    context.setUsername(bundle.authData.username);
-    context.setPassword(bundle.authData.password);
-    context.setSecurityMode(Constants.BASIC_AUTHENTICATION);
+    const context = getContext(bundle);
 
     let licensee = new Licensee();
-
     if (bundle.inputData.name !== undefined) {
         licensee.setName(bundle.inputData.name);
     }

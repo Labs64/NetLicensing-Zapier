@@ -1,3 +1,7 @@
 ## 0.9.0
 
 * (New) Early Access version of NetLicensing / Zapier integration
+
+## 0.9.1
+
+* API Key authentication added

@@ -1,8 +1,12 @@
+const { Token, TokenService, Constants, Context } = require('netlicensing-client/dist/netlicensing-client.node');
+
 const { version: platformVersion } = require('zapier-platform-core');
 const { version } = require('./package.json');
 
-// auth (basic)
-const authentication = require('./authentication/BasicAuth');
+// auth
+// const authentication = require('./authentication/BasicAuth');
+const authentication = require('./authentication/Custom');
+
 // triggers
 const newProduct = require('./triggers/NewProduct');
 const newLicensee = require('./triggers/NewLicensee');
@@ -16,6 +20,18 @@ const createLicensee = require('./creates/CreateLicensee');
 const searchOrCreateProduct = require('./search_or_creates/SearchOrCreateProduct');
 const searchOrCreateLicensee = require('./search_or_creates/SearchOrCreateLicensee');
 
+const addAuthToHeader = (request, z, bundle) => {
+    if (bundle.authData.username.trim() && bundle.authData.password.trim()) {
+        request.headers.Authorization = `Basic ${Buffer.from(`${bundle.authData.username}:${bundle.authData.password}`)
+            .toString('base64')}`;
+    } else if (bundle.authData.apiKey.trim()) {
+        request.headers.Authorization = `Basic ${Buffer.from(`apiKey:${bundle.authData.apiKey}`)
+            .toString('base64')}`;
+    }
+
+    return request;
+};
+
 // We can roll up all our behaviors in an App.
 const App = {
     // This is just shorthand to reference the installed dependencies you have. Zapier will
@@ -28,7 +44,7 @@ const App = {
     authentication,
 
     // beforeRequest & afterResponse are optional hooks into the provided HTTP client
-    beforeRequest: [],
+    beforeRequest: [addAuthToHeader],
 
     afterResponse: [],
 

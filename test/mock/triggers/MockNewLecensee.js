@@ -2,8 +2,6 @@ const zapier = require('zapier-platform-core/index');
 
 const nock = require('nock');
 
-const should = require('should');
-
 const constants = require('../../../config/Constants');
 
 const App = require('../../../index');

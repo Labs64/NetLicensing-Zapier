@@ -12,8 +12,9 @@ const appTester = zapier.createAppTester(App);
 describe('Authentication', () => {
     const apiMock = nock(constants.BASE_HOST);
     const authData = {
-        username: constants.NLIC_USERNAME,
-        password: constants.NLIC_PASSWORD,
+        username: '',
+        password: '',
+        apiKey: 'testApiKey',
     };
 
     afterEach(() => {

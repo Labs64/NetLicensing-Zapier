@@ -1,5 +1,3 @@
-const should = require('should/should');
-
 const zapier = require('zapier-platform-core/index');
 
 const constants = require('../../../config/Constants');
