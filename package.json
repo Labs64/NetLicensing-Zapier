@@ -1,6 +1,6 @@
 {
   "name": "netlicensing",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "NetLicensing / Zapier integration",
   "repository": "github:Labs64/NetLicensing-Zapier",
   "homepage": "https://netlicensing.io",
@@ -12,21 +12,21 @@
     "lint": "eslint index.js"
   },
   "engines": {
-    "node": ">=8.10.0",
-    "npm": ">=5.6.0"
+    "node": ">=10.14.1",
+    "npm": ">=6.4.1"
   },
   "dependencies": {
-    "netlicensing-client": "^1.2.15",
-    "zapier-platform-core": "8.2.1"
+    "netlicensing-client": "^1.2.19",
+    "zapier-platform-core": "9.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-mocha": "^5.3.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha": "^6.2.2",
     "axios-mock-adapter": "^1.17.0",
-    "mocha": "^5.2.0",
-    "nock": "^10.0.6",
-    "should": "^13.2.0"
+    "mocha": "^6.2.2",
+    "nock": "^11.7.0",
+    "should": "^13.2.3"
   }
 }
