@@ -16,7 +16,7 @@
     "npm": ">=6.4.1"
   },
   "dependencies": {
-    "netlicensing-client": "^1.2.19",
+    "netlicensing-client": "^1.2.21",
     "zapier-platform-core": "9.0.0"
   },
   "devDependencies": {
@@ -28,6 +28,6 @@
     "mocha": "^6.2.2",
     "nock": "^11.7.0",
     "should": "^13.2.3",
-    "guidechimp": "^1.0.0"
+    "guidechimp": "^1.1.1"
   }
 }
