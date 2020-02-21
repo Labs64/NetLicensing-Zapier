@@ -28,6 +28,6 @@
     "mocha": "^6.2.2",
     "nock": "^11.7.0",
     "should": "^13.2.3",
-    "guidechimp": "^1.1.1"
+    "guidechimp": "^1.2.0"
   }
 }
