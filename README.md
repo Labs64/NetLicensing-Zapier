@@ -11,6 +11,12 @@
 You can use Zapier to do Labs64 NetLicensing Automation.
 Please refer to the NetLicensing triggers, searches and actions available at [Zapier](https://zapier.com/apps/netlicensing).
 
+### Security
+
+You need to be authenticated to use NetLicensing API. Use the following authentication options:
+- Username/Password - provides full access to the NetLicensing API
+- [API Key](https://netlicensing.io/wiki/security) *(recommended)* - provides limited access to the NetLicensing API based on the API Key Role.
+
 ### Triggers
 - *New Product* - Triggers when a new product is created
 - *New Licensee* - Triggers when a new licensee is created
