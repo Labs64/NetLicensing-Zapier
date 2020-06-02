@@ -15,7 +15,7 @@ Please refer to the NetLicensing triggers, searches and actions available at [Za
 
 You need to be authenticated to use NetLicensing API. Use the following authentication options:
 - Username/Password - provides full access to the NetLicensing API
-- [API Key](https://netlicensing.io/wiki/security) *(recommended)* - provides limited access to the NetLicensing API based on the API Key Role.
+- [API Key](https://netlicensing.io/wiki/security) *(recommended)* - provides limited access to the NetLicensing API based on the API Key Role. We suggest using roleId `ROLE_APIKEY_OPERATION` if you need to manage customers and licenses and roleId `ROLE_APIKEY_MAINTENANCE` is you need to manage product details.
 
 ### Triggers
 - *New Product* - Triggers when a new product is created
