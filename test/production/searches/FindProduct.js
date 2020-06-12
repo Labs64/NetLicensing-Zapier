@@ -20,7 +20,7 @@ describe('Find Product', () => {
                 done();
             })
             .catch((error) => {
-                error.message.should.containEql('Parameter number bad value - undefined');
+                error.message.should.containEql('Parameter number has bad value undefined');
                 done();
             });
     });

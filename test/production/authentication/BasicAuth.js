@@ -40,7 +40,7 @@ describe('Basic Authentication', () => {
                 done('Should not get here');
             })
             .catch((error) => {
-                error.message.should.containEql('The username and/or password you supplied is incorrect');
+                error.message.should.containEql('Unauthorized');
                 done();
             });
     });

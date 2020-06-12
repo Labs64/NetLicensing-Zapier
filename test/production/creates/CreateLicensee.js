@@ -20,7 +20,7 @@ describe('Create Licensee', () => {
                 done();
             })
             .catch((error) => {
-                error.message.should.containEql('Parameter productNumber bad value - undefined');
+                error.message.should.containEql('Parameter productNumber has bad value undefined');
                 done();
             });
     });
