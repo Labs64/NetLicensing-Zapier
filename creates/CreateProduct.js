@@ -75,14 +75,14 @@ module.exports = {
         // outputFields: () => { return []; }
         // Alternatively, a static field definition should be provided, to specify labels for the fields
         outputFields: [
-            { key: 'id', label: 'ID' },
+            { key: 'id', label: 'ID', type: 'integer' },
             { key: 'name', label: 'Name' },
             { key: 'number', label: 'Number' },
-            { key: 'active', label: 'Active' },
+            { key: 'active', label: 'Active', type: 'boolean' },
             { key: 'version', label: 'Version' },
-            { key: 'licenseeAutoCreate', label: 'Licensee Auto Create' },
-            { key: 'description', label: 'Product description' },
-            { key: 'licensingInfo', label: 'Product licensing info' },
+            { key: 'licenseeAutoCreate', label: 'Licensee Auto-Create', type: 'boolean' },
+            { key: 'description', label: 'Description' },
+            { key: 'licensingInfo', label: 'Licensing Info' },
         ],
     },
 };

@@ -4,7 +4,10 @@
   "description": "NetLicensing / Zapier integration",
   "repository": "github:Labs64/NetLicensing-Zapier",
   "homepage": "https://netlicensing.io",
-  "author": "Yushkevich Andrei <andrew.yushkevich@labs64.de>",
+  "author": "Labs64 NetLicensing <netlicensing@labs64.com>",
+  "contributors": [
+    "Yushkevich Andrei <andrew.yushkevich@labs64.de>"
+  ],
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {

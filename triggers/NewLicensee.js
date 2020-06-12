@@ -69,9 +69,9 @@ module.exports = {
         // https://github.com/zapier/zapier-platform-cli#customdynamic-fields.
         // Alternatively, a static field definition should be provided, to specify labels for the fields
         outputFields: [
-            { key: 'id', label: 'id' },
-            { key: 'active', label: 'active' },
-            { key: 'number', label: 'number' },
+            { key: 'id', label: 'ID', type: 'integer' },
+            { key: 'active', label: 'Active', type: 'boolean' },
+            { key: 'number', label: 'Number' },
         ],
     },
 

@@ -47,7 +47,7 @@ module.exports = {
             key: 'apiKey',
             type: 'string',
             required: false,
-            helpText: 'You could authenticate by Username and Password or API Key',
+            helpText: 'Go to the [Settings / API Access](https://ui.netlicensing.io/#/settings) tab in the NetLicensing Console to find your API Key.',
         },
     ],
 };
