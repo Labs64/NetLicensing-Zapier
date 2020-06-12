@@ -8,8 +8,8 @@ const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('Basic Auth', () => {
-    it('Success auth', (done) => {
+describe('Basic Authentication', () => {
+    it('Successful Authentication', (done) => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
@@ -26,7 +26,7 @@ describe('Basic Auth', () => {
             .catch(done);
     });
 
-    it('Failed auth', (done) => {
+    it('Failed Authentication', (done) => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {

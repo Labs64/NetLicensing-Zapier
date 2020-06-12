@@ -9,7 +9,7 @@ const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('Authentication', () => {
+describe('Basic Authentication', () => {
     const apiMock = nock(constants.BASE_HOST);
     const authData = {
         username: constants.NLIC_USERNAME,
@@ -20,7 +20,7 @@ describe('Authentication', () => {
         nock.cleanAll();
     });
 
-    it('Success auth', (done) => {
+    it('Successful Basic Authentication', (done) => {
         const bundle = Object.assign({}, { authData });
 
         apiMock.get(`${constants.BASE_PATH}/utility/licensingModels`)

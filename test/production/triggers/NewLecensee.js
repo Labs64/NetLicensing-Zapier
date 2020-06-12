@@ -7,7 +7,7 @@ const constants = require('../../../config/Constants');
 const appTester = zapier.createAppTester(App);
 
 describe('New Licensee', () => {
-    it('Should load list of Licensee', (done) => {
+    it('Licensees list', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,
@@ -24,7 +24,7 @@ describe('New Licensee', () => {
             })
             .catch(done);
     });
-    it('Should`t load list of Licensee', (done) => {
+    it('Licensees list error', (done) => {
         const bundle = {
             authData: {
                 username: 'wrong_user_name',

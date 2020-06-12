@@ -15,7 +15,7 @@ describe('New Licensee', () => {
 
     const apiMock = nock(constants.BASE_HOST);
 
-    it('Should load empty list of Licensee', (done) => {
+    it('Load empty Licensee list', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,
@@ -40,7 +40,7 @@ describe('New Licensee', () => {
             .catch(done);
     });
 
-    it('Should load list of Licensee', (done) => {
+    it('Load Licensee list', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,

@@ -7,7 +7,7 @@ const constants = require('../../../config/Constants');
 const appTester = zapier.createAppTester(App);
 
 describe('Find Product', () => {
-    it('Parameter number has bad value', (done) => {
+    it('Parameter number bad value', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,
@@ -20,11 +20,11 @@ describe('Find Product', () => {
                 done();
             })
             .catch((error) => {
-                error.message.should.containEql('Parameter number has bad value undefined');
+                error.message.should.containEql('Parameter number bad value - undefined');
                 done();
             });
     });
-    it('Should`t find product', (done) => {
+    it('Find Product error', (done) => {
         const bundle = {
             authData: {
                 username: 'wrong_user_name',

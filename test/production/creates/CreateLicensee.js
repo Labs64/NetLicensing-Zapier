@@ -7,7 +7,7 @@ const App = require('../../../index');
 const appTester = zapier.createAppTester(App);
 
 describe('Create Licensee', () => {
-    it('Parameter productNumber has bad value', (done) => {
+    it('Parameter productNumber bad value', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,
@@ -20,12 +20,12 @@ describe('Create Licensee', () => {
                 done();
             })
             .catch((error) => {
-                error.message.should.containEql('Parameter productNumber has bad value undefined');
+                error.message.should.containEql('Parameter productNumber bad value - undefined');
                 done();
             });
     });
 
-    it('Should`t create licensee', (done) => {
+    it('Error at Licensee creation', (done) => {
         const bundle = {
             authData: {
                 username: 'wrong_user_name',

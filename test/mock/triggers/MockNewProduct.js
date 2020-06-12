@@ -16,7 +16,7 @@ describe('New Product', () => {
 
     const apiMock = nock(constants.BASE_HOST);
 
-    it('Should load empty list of Products', (done) => {
+    it('Load empty Products list', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,
@@ -41,7 +41,7 @@ describe('New Product', () => {
             .catch(done);
     });
 
-    it('Should load list of Products', (done) => {
+    it('Load Products list', (done) => {
         const bundle = {
             authData: {
                 username: constants.NLIC_USERNAME,

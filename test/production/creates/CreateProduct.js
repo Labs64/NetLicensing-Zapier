@@ -7,7 +7,7 @@ const App = require('../../../index');
 const appTester = zapier.createAppTester(App);
 
 describe('Create Product', () => {
-    it('Should`t create product', (done) => {
+    it('Error at Product creation', (done) => {
         const bundle = {
             authData: {
                 username: 'wrong_user_name',
