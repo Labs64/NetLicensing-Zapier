@@ -16,8 +16,11 @@ const listProducts = (z, bundle) => {
 
     return z.request(options)
         .then((response) => {
-            response.throwForStatus();
-            const results = z.JSON.parse(response.content).items.item;
+            // v10.0.0 compatibility
+            // response.throwForStatus();
+            // const results = z.JSON.parse(response.content).items.item;
+
+            const results = response.data.items.item;
 
             return results.map((item) => {
                 const newProp = {};
