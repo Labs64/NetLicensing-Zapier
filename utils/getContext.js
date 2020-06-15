@@ -2,7 +2,7 @@ const { Context, Constants } = require('netlicensing-client/dist/netlicensing-cl
 
 module.exports = (bundle) => {
     const context = new Context();
-    context.setApiKey(bundle.authData.apiKey);
     context.setSecurityMode(Constants.APIKEY_IDENTIFICATION);
+    context.setApiKey(bundle.authData.apiKey);
     return context;
 };

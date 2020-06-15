@@ -10,7 +10,6 @@ const appTester = zapier.createAppTester(App);
 
 describe('Basic Authentication', () => {
     it('Successful Authentication', (done) => {
-        // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
                 apiKey: constants.NLIC_APIKEY,
@@ -26,7 +25,6 @@ describe('Basic Authentication', () => {
     });
 
     it('Failed Authentication', (done) => {
-        // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
                 apiKey: 'XXX',
@@ -42,4 +40,5 @@ describe('Basic Authentication', () => {
                 done();
             });
     });
+
 });

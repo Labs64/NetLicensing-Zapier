@@ -5,7 +5,7 @@ module.exports = Object.freeze({
     NLIC_PASSWORD: 'demo',
     NLIC_APIKEY: '2e531c4a-eab3-40df-b17e-1ae66ea3d206',
     authentication: {
-        LOGIN_FAILED_TEXT: 'The username and/or password you supplied is incorrect',
+        LOGIN_FAILED_TEXT: 'The APIKey you supplied is incorrect',
         SERVICE_UNAVAILABLE_TEXT: 'Service temporary unavailable',
     },
     triggers: {

@@ -31,13 +31,13 @@ module.exports = {
     // The test method allows Zapier to verify that the credentials a user provides are valid. We'll execute this
     // method whenver a user connects their account for the first time.
     test,
-    // assuming "username" is a key returned from the test
+
     fields: [
         {
             key: 'apiKey',
             type: 'string',
             required: true,
-            helpText: 'Go to the [Settings / API Access](https://ui.netlicensing.io/#/settings) tab in the NetLicensing Console to find your API Key.',
+            helpText: 'Go to the [Settings > API Access](https://ui.netlicensing.io/#/settings) tab in the NetLicensing Console to find your API Key.',
         },
     ],
 };
