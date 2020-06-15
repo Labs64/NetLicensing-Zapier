@@ -19,7 +19,7 @@
     "npm": ">=6.14.4"
   },
   "dependencies": {
-    "netlicensing-client": "^1.2.21",
+    "netlicensing-client": "^1.2.23",
     "zapier-platform-core": "10.0.0"
   },
   "devDependencies": {
