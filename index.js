@@ -4,7 +4,6 @@ const { version: platformVersion } = require('zapier-platform-core');
 const { version } = require('./package.json');
 
 // auth
-// const authentication = require('./authentication/BasicAuth');
 const authentication = require('./authentication/Custom');
 
 // triggers
@@ -21,14 +20,7 @@ const searchOrCreateProduct = require('./search_or_creates/SearchOrCreateProduct
 const searchOrCreateLicensee = require('./search_or_creates/SearchOrCreateLicensee');
 
 const addAuthToHeader = (request, z, bundle) => {
-    if (bundle.authData.username.trim() && bundle.authData.password.trim()) {
-        request.headers.Authorization = `Basic ${Buffer.from(`${bundle.authData.username}:${bundle.authData.password}`)
-            .toString('base64')}`;
-    } else if (bundle.authData.apiKey.trim()) {
-        request.headers.Authorization = `Basic ${Buffer.from(`apiKey:${bundle.authData.apiKey}`)
-            .toString('base64')}`;
-    }
-
+    request.headers.Authorization = `Basic ${Buffer.from(`apiKey:${bundle.authData.apiKey}`).toString('base64')}`;
     return request;
 };
 

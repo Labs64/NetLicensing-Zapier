@@ -27,26 +27,16 @@ const test = (z) => {
 
 module.exports = {
     type: 'custom',
+
     // The test method allows Zapier to verify that the credentials a user provides are valid. We'll execute this
     // method whenver a user connects their account for the first time.
     test,
     // assuming "username" is a key returned from the test
-    // connectionLabel: '{{username}}',
     fields: [
-        {
-            key: 'username',
-            type: 'string',
-            required: false,
-        },
-        {
-            key: 'password',
-            type: 'password',
-            required: false,
-        },
         {
             key: 'apiKey',
             type: 'string',
-            required: false,
+            required: true,
             helpText: 'Go to the [Settings / API Access](https://ui.netlicensing.io/#/settings) tab in the NetLicensing Console to find your API Key.',
         },
     ],
