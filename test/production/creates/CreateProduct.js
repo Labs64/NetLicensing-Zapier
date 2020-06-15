@@ -7,11 +7,10 @@ const App = require('../../../index');
 const appTester = zapier.createAppTester(App);
 
 describe('Create Product', () => {
-    it('Error at Product creation', (done) => {
+    it('Parameter productNumber bad value', (done) => {
         const bundle = {
             authData: {
-                username: 'wrong_user_name',
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
         };
 
@@ -20,8 +19,9 @@ describe('Create Product', () => {
                 done();
             })
             .catch((error) => {
-                error.message.length.should.above(0);
+                error.message.should.containEql('Parameter productNumber has bad value undefined');
                 done();
             });
     });
+
 });

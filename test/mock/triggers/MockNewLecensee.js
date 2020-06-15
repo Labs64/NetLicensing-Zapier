@@ -18,8 +18,7 @@ describe('New Licensee', () => {
     it('Load empty Licensee list', (done) => {
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
             meta: {
                 page: 0,
@@ -43,8 +42,7 @@ describe('New Licensee', () => {
     it('Load Licensee list', (done) => {
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
             meta: {
                 page: 0,

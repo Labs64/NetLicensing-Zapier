@@ -10,8 +10,7 @@ describe('Find Licensee', () => {
     it('Parameter number bad value', (done) => {
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
         };
 
@@ -24,24 +23,5 @@ describe('Find Licensee', () => {
                 done();
             });
     });
-    it('Licensee find error', (done) => {
-        const bundle = {
-            authData: {
-                username: 'wrong_user_name',
-                password: constants.NLIC_PASSWORD,
-            },
-            inputData: {
-                number: 'number',
-            },
-        };
 
-        appTester(App.searches.find_licensee.operation.perform, bundle)
-            .then(() => {
-                done();
-            })
-            .catch((error) => {
-                error.message.length.should.above(0);
-                done();
-            });
-    });
 });

@@ -19,8 +19,7 @@ describe('New Product', () => {
     it('Load empty Products list', (done) => {
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
             meta: {
                 page: 0,
@@ -44,8 +43,7 @@ describe('New Product', () => {
     it('Load Products list', (done) => {
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
             meta: {
                 page: 0,

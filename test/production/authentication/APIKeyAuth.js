@@ -13,8 +13,7 @@ describe('Basic Authentication', () => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
-                username: constants.NLIC_USERNAME,
-                password: constants.NLIC_PASSWORD,
+                apiKey: constants.NLIC_APIKEY,
             },
         };
 
@@ -30,8 +29,7 @@ describe('Basic Authentication', () => {
         // Try changing the values of username or password to see how the test method behaves
         const bundle = {
             authData: {
-                username: 'user',
-                password: 'badpwd',
+                apiKey: 'XXX',
             },
         };
 

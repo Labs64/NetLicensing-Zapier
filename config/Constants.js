@@ -3,6 +3,7 @@ module.exports = Object.freeze({
     BASE_PATH: '/core/v2/rest',
     NLIC_USERNAME: 'demo',
     NLIC_PASSWORD: 'demo',
+    NLIC_APIKEY: '2e531c4a-eab3-40df-b17e-1ae66ea3d206',
     authentication: {
         LOGIN_FAILED_TEXT: 'The username and/or password you supplied is incorrect',
         SERVICE_UNAVAILABLE_TEXT: 'Service temporary unavailable',
