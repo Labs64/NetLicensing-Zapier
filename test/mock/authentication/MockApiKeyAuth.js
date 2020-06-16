@@ -9,7 +9,7 @@ const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('APIKey Authentication', () => {
+describe('APIKey Authentication (Mock)', () => {
     const apiMock = nock(constants.BASE_HOST);
     const authData = {
         apiKey: 'testApiKey',
@@ -19,7 +19,7 @@ describe('APIKey Authentication', () => {
         nock.cleanAll();
     });
 
-    it('Successful APIKey Authentication', (done) => {
+    it('Successful Authentication', (done) => {
         const bundle = Object.assign({}, { authData });
 
         apiMock.get(`${constants.BASE_PATH}/utility/licensingModels`)

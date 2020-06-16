@@ -8,7 +8,7 @@ const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
-describe('Basic Authentication', () => {
+describe('APIKey Authentication (PROD)', () => {
     it('Successful Authentication', (done) => {
         const bundle = {
             authData: {
