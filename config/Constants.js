@@ -17,18 +17,18 @@ module.exports = Object.freeze({
     },
     searches: {
         FIND_PRODUCT_NOUN: 'Product',
-        FIND_PRODUCT_LABEL: 'Find Product',
+        FIND_PRODUCT_LABEL: 'Search Product',
         FIND_PRODUCT_DESCRIPTION: 'Search product by its number',
 
         FIND_LICENSEE_NOUN: 'Licensee',
-        FIND_LICENSEE_LABEL: 'Find Licensee',
+        FIND_LICENSEE_LABEL: 'Search Licensee',
         FIND_LICENSEE_DESCRIPTION: 'Search licensee by its number',
     },
     search_or_creates: {
-        SEARCH_OR_CREATE_PRODUCT_LABEL: 'Search or Create Product',
+        SEARCH_OR_CREATE_PRODUCT_LABEL: 'Search and create Product',
         SEARCH_OR_CREATE_PRODUCT_DESCRIPTION: 'Create product if this does not exist',
 
-        SEARCH_OR_CREATE_LICENSEE_LABEL: 'Search or Create Licensee',
+        SEARCH_OR_CREATE_LICENSEE_LABEL: 'Search and create Licensee',
         SEARCH_OR_CREATE_LICENSEE_DESCRIPTION: 'Create licensee if this does not exist',
     },
     creates: {
