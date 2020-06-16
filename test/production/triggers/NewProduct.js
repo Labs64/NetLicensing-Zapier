@@ -10,7 +10,7 @@ describe('New Product', () => {
     it('Products list', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
             meta: {
                 page: 0,

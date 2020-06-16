@@ -6,6 +6,7 @@ const createLicensee = async (z, bundle) => {
     const context = getContext(bundle);
 
     let licensee = new Licensee();
+
     if (bundle.inputData.name !== undefined) {
         licensee.setName(bundle.inputData.name);
     }
@@ -69,17 +70,17 @@ module.exports = {
         // from the API, Zapier will fallback to this hard-coded sample. It should reflect the data structure of
         // returned records, and have obviously dummy values that we can show to any user.
         sample: {
-            id: 'P9F6UGCXK',
-            name: 'licenseeName',
-            number: 'P9F6UGCXK',
+            id: 'C9F6UGCXK',
+            name: 'Customer Name',
+            number: 'CUST-NUM-01',
             active: true,
-            productNumber: 'productNumber',
-            email: 'test@netlicensing.com',
-            address1: 'Radlkoferstraße 2',
+            productNumber: 'PROD-01',
+            email: 'info@netlicensing.io',
+            address1: 'Radlkoferstr. 2',
             zip: '81373',
             country: 'Germany',
-            companyName: 'Company name',
-            fullName: 'Full name',
+            companyName: 'Company Name',
+            fullName: 'Full Name',
         },
 
         // If the resource can have fields that are custom on a per-user basis, define a function to fetch the custom

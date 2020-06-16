@@ -10,7 +10,7 @@ describe('Find Licensee', () => {
     it('Parameter number bad value', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
         };
 

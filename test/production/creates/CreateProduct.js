@@ -10,7 +10,7 @@ describe('Create Product', () => {
     it('Parameter productNumber bad value', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
         };
 

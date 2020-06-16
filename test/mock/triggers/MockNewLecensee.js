@@ -18,7 +18,7 @@ describe('New Licensee', () => {
     it('Load empty Licensee list', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
             meta: {
                 page: 0,
@@ -42,7 +42,7 @@ describe('New Licensee', () => {
     it('Load Licensee list', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
             meta: {
                 page: 0,

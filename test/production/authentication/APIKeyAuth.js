@@ -12,7 +12,7 @@ describe('Basic Authentication', () => {
     it('Successful Authentication', (done) => {
         const bundle = {
             authData: {
-                apiKey: constants.NLIC_APIKEY,
+                apiKey: constants.NLIC_APIKEY_TEST,
             },
         };
 

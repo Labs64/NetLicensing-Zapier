@@ -6,7 +6,8 @@ const createProduct = async (z, bundle) => {
     const context = getContext(bundle);
 
     let product = new Product()
-        .setName(bundle.inputData.name);
+    
+    product.setName(bundle.inputData.name);
 
     if (bundle.inputData.number !== undefined) {
         product.setNumber(bundle.inputData.number);
@@ -61,13 +62,13 @@ module.exports = {
         // returned records, and have obviously dummy values that we can show to any user.
         sample: {
             id: 'P9F6UGCXK',
-            name: 'productName',
-            number: 'P9F6UGCXK',
+            name: 'Product Name',
+            number: 'PROD-01',
             active: true,
             version: '1.0',
             licenseeAutoCreate: true,
-            description: 'Product description',
-            licensingInfo: 'Product licensing info',
+            description: 'Product Description',
+            licensingInfo: 'Product Licensing Info',
         },
 
         // If the resource can have fields that are custom on a per-user basis, define a function to fetch the custom
