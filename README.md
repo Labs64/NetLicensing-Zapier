@@ -2,7 +2,7 @@
 
 # Labs64 NetLicensing / Zapier Integration
 
-![CI - Zapier tests](https://github.com/Labs64/NetLicensing-Zapier/workflows/CI%20-%20Zapier%20tests/badge.svg)
+[![CI - Zapier tests](https://github.com/Labs64/NetLicensing-Zapier/workflows/CI%20-%20Zapier%20tests/badge.svg)](https://github.com/Labs64/NetLicensing-Zapier/actions?query=workflow%3A%22CI+-+Zapier+tests%22)
 
 [Labs64 NetLicensing](https://netlicensing.io) is a first-class solution in the Licensing as a Service (LaaS) sector. Based on open standards, it provides a cost effective, integrated and scalable platform for software vendors and developers who want to concentrate on their product’s core functionality instead of spending resources on developing an own license management software.
 
