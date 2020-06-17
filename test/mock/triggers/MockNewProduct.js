@@ -1,56 +1,35 @@
-const zapier = require('zapier-platform-core/index');
-
-const nock = require('nock');
-
+const zapier = require('zapier-platform-core');
+const { Service } = require('netlicensing-client/dist/netlicensing-client.node');
+const AxiosMockAdapter = require('axios-mock-adapter');
 const constants = require('../../../config/Constants');
-
 const App = require('../../../index');
+const response = require('../response');
+const error = require('../error');
 
 const appTester = zapier.createAppTester(App);
 
 describe('New Product', () => {
+    let baseUrl;
+    let mock;
 
-    afterEach(() => {
-        nock.cleanAll();
+    before(() => {
+        baseUrl = `${constants.BASE_HOST}${constants.BASE_PATH}`;
     });
 
-    const apiMock = nock(constants.BASE_HOST);
+    beforeEach(() => {
+        mock = new AxiosMockAdapter(Service.getAxiosInstance());
+    });
 
-    it('Load empty Products list', (done) => {
+    it('Products list', async () => {
         const bundle = {
-            authData: {
-                apiKey: constants.NLIC_APIKEY_TEST,
-            },
+            authData: { apiKey: constants.NLIC_APIKEY_TEST },
             meta: {
                 page: 0,
             },
         };
 
-        apiMock.get(`${constants.BASE_PATH}/product?filter%3Dpage%3D=0`)
-            .reply(200,
-                '{"signature":null,"infos":{"info":[]},"items":'
-                + '{"item":[],"pagenumber":null,"itemsnumber":null,"totalpages":null,"totalitems":null,'
-                + '"hasnext":null},"id":null,"ttl":null}');
-
-        appTester(App.triggers.new_product.operation.perform, bundle)
-            .then((results) => {
-                results.length.should.eql(0);
-                done();
-            })
-            .catch(done);
-    });
-
-    it('Load Products list', (done) => {
-        const bundle = {
-            authData: {
-                apiKey: constants.NLIC_APIKEY_TEST,
-            },
-            meta: {
-                page: 0,
-            },
-        };
-
-        apiMock.get(`${constants.BASE_PATH}/product?filter%3Dpage%3D=0`)
+        // configure mock for get request
+        mock.onGet(`${baseUrl}/product`)
             .reply(200,
                 '{"signature":null,"infos":{"info":[]},"items":{"item":'
                 + '[{"property":[{"value":"PQ6KJUD2M-DEMO","name":"number"},'
@@ -65,13 +44,12 @@ describe('New Product', () => {
                 + '{"value":"EUR","name":"currency"},{"value":"9.00","name":"amountFix"}],"list":[],"name":"discount"},'
                 + '{"property":[{"value":"100.00","name":"totalPrice"},{"value":"EUR","name":"currency"},{"value":"10",'
                 + '"name":"amountPercent"}],"list":[],"name":"discount"}],"type":"Product"}],"pagenumber":"0",'
-                + '"itemsnumber":"1","totalpages":"1","totalitems":"1","hasnext":"false"},"id":null,"ttl":null}');
+                + '"itemsnumber":"1","totalpages":"1","totalitems":"1","hasnext":"false"},"id":null,"ttl":null}'
+                );
 
-        appTester(App.triggers.new_product.operation.perform, bundle)
-            .then((results) => {
-                results.length.should.above(0);
-                done();
-            })
-            .catch(done);
+        const results = await appTester(App.triggers.new_product.operation.perform, bundle);
+
+        results.length.should.above(0);
     });
+
 });

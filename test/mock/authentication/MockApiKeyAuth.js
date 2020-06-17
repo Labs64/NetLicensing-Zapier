@@ -1,35 +1,37 @@
-const zapier = require('zapier-platform-core/index');
-
-const nock = require('nock');
-
+const zapier = require('zapier-platform-core');
+const { Service } = require('netlicensing-client/dist/netlicensing-client.node');
+const AxiosMockAdapter = require('axios-mock-adapter');
 const constants = require('../../../config/Constants');
-
-// Use this to make test calls into your app:
 const App = require('../../../index');
+const response = require('../response');
+const error = require('../error');
 
 const appTester = zapier.createAppTester(App);
 
-describe('APIKey Authentication (Mock)', () => {
-    const apiMock = nock(constants.BASE_HOST);
-    const authData = {
-        apiKey: 'testApiKey',
-    };
+describe('APIKey Authentication (MOCK)', () => {
+    let baseUrl;
+    let mock;
 
-    afterEach(() => {
-        nock.cleanAll();
+    before(() => {
+        baseUrl = `${constants.BASE_HOST}${constants.BASE_PATH}`;
     });
 
-    it('Successful Authentication', (done) => {
-        const bundle = Object.assign({}, { authData });
+    beforeEach(() => {
+        mock = new AxiosMockAdapter(Service.getAxiosInstance());
+    });
 
-        apiMock.get(`${constants.BASE_PATH}/utility/licensingModels`)
+    it('Successful Authentication', async () => {
+        const bundle = {
+            authData: { apiKey: constants.NLIC_APIKEY_TEST },
+        };
+
+        // configure mock for get request
+        mock.onGet(`${baseUrl}/utility/licensingModels`)
             .reply(200);
 
-        appTester(App.authentication.test, bundle)
-            .then((response) => {
-                response.status.should.eql(200);
-                done();
-            })
-            .catch(done);
+        const results = await appTester(App.authentication.test, bundle);
+
+        results.status.should.eql(200);
     });
+
 });
