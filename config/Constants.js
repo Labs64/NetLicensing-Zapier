@@ -16,13 +16,13 @@ module.exports = Object.freeze({
         NEW_LICENSEE_DESCRIPTION: 'Triggers when new licensee is created',
     },
     searches: {
-        FIND_PRODUCT_NOUN: 'Product',
-        FIND_PRODUCT_LABEL: 'Search Product',
-        FIND_PRODUCT_DESCRIPTION: 'Search product by its number',
+        SEARCH_PRODUCT_NOUN: 'Product',
+        SEARCH_PRODUCT_LABEL: 'Search Product',
+        SEARCH_PRODUCT_DESCRIPTION: 'Search product by its number',
 
-        FIND_LICENSEE_NOUN: 'Licensee',
-        FIND_LICENSEE_LABEL: 'Search Licensee',
-        FIND_LICENSEE_DESCRIPTION: 'Search licensee by its number',
+        SEARCH_LICENSEE_NOUN: 'Licensee',
+        SEARCH_LICENSEE_LABEL: 'Search Licensee',
+        SEARCH_LICENSEE_DESCRIPTION: 'Search licensee by its number',
     },
     search_or_creates: {
         SEARCH_OR_CREATE_PRODUCT_LABEL: 'Search and create Product',

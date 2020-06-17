@@ -8,7 +8,7 @@ const error = require('../error');
 
 const appTester = zapier.createAppTester(App);
 
-describe('Search Product', () => {
+describe('Search Licensee', () => {
     let baseUrl;
     let mock;
 
@@ -20,39 +20,40 @@ describe('Search Product', () => {
         mock = new AxiosMockAdapter(Service.getAxiosInstance());
     });
 
-    it('should return the product', async () => {
-        const product = { number: 'XXX', name: 'Product XXX', version: '1.0' };
+    it('Existing Licensee', async () => {
+        const licensee = { number: 'CUSTOMER01', name: 'Customer One' };
 
         const bundle = {
             authData: { apiKey: constants.NLIC_APIKEY_TEST },
-            inputData: { number: product.number },
+            inputData: { number: licensee.number },
         };
 
         // configure mock for get request
-        mock.onGet(`${baseUrl}/product/${product.number}`)
-            .reply(200, response(product));
+        mock.onGet(`${baseUrl}/licensee/${licensee.number}`)
+            .reply(200, response(licensee));
 
-        const results = await appTester(App.searches.find_product.operation.perform, bundle);
+        const results = await appTester(App.searches.search_licensee.operation.perform, bundle);
 
-        results.should.eql([product]);
+        results.should.eql([licensee]);
     });
 
-    it('should throw an error when the product not found', async () => {
-        const number = 'Any-number-that-not-exist';
+    it('Not Existing Licensee', async () => {
+        const licensee = { number: 'CUSTOMER01', name: 'Customer One', version: '1.0' };
 
         const bundle = {
             authData: { apiKey: constants.NLIC_APIKEY_TEST },
-            inputData: { number },
+            inputData: { number: licensee.number },
         };
 
         // configure mock for get request
-        mock.onGet(`${baseUrl}/product/${number}`)
-            .reply(400, error(['NotFoundException', 'Requested product does not exist']));
+        mock.onGet(`${baseUrl}/licensee/${licensee.number}`)
+            .reply(400, error(['NotFoundException', 'Requested licensee does not exist.']));
 
         try {
-            await appTester(App.searches.find_product.operation.perform, bundle);
+            await appTester(App.searches.search_licensee.operation.perform, bundle);
         } catch (e) {
-            e.message.should.containEql('Requested product does not exist');
+            e.message.should.containEql('Requested licensee does not exist.');
         }
     });
+
 });

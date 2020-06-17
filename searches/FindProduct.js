@@ -9,14 +9,14 @@ const getProduct = async (z, bundle) => {
 };
 
 module.exports = {
-    key: 'find_product',
+    key: 'search_product',
 
     // You'll want to provide some helpful display labels and descriptions
     // for users. Zapier will put them into the UX.
-    noun: constants.searches.FIND_PRODUCT_NOUN,
+    noun: constants.searches.SEARCH_PRODUCT_NOUN,
     display: {
-        label: constants.searches.FIND_PRODUCT_LABEL,
-        description: constants.searches.FIND_PRODUCT_DESCRIPTION,
+        label: constants.searches.SEARCH_PRODUCT_LABEL,
+        description: constants.searches.SEARCH_PRODUCT_DESCRIPTION,
     },
 
     // `operation` is where we make the call to your API to do the search

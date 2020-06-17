@@ -10,8 +10,8 @@ const authentication = require('./authentication/Custom');
 const newProduct = require('./triggers/NewProduct');
 const newLicensee = require('./triggers/NewLicensee');
 // searches
-const findProduct = require('./searches/FindProduct');
-const findLicensee = require('./searches/FindLicensee');
+const searchProduct = require('./searches/FindProduct');
+const searchLicensee = require('./searches/FindLicensee');
 // creates
 const createProduct = require('./creates/CreateProduct');
 const createLicensee = require('./creates/CreateLicensee');
@@ -50,8 +50,8 @@ const App = {
     },
     // If you want your searches to show up, you better include it here!
     searches: {
-        [findLicensee.key]: findLicensee,
-        [findProduct.key]: findProduct,
+        [searchLicensee.key]: searchLicensee,
+        [searchProduct.key]: searchProduct,
     },
 
     // If you want your creates to show up, you better include it here!

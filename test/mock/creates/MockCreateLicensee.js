@@ -6,6 +6,7 @@ const App = require('../../../index');
 
 const appTester = zapier.createAppTester(App);
 
+/*
 describe('Create Licensee', () => {
     it('Parameter productNumber bad value', (done) => {
         const bundle = {
@@ -25,3 +26,4 @@ describe('Create Licensee', () => {
     });
 
 });
+*/
