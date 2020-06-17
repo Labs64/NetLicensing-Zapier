@@ -6,7 +6,8 @@ const constants = require('../../../config/Constants');
 
 const appTester = zapier.createAppTester(App);
 
-describe('Find Licensee', () => {
+describe('Search Licensee', () => {
+
     it('Parameter number bad value', (done) => {
         const bundle = {
             authData: {
