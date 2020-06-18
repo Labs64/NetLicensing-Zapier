@@ -15,6 +15,7 @@ const searchLicensee = require('./searches/FindLicensee');
 // creates
 const createProduct = require('./creates/CreateProduct');
 const createLicensee = require('./creates/CreateLicensee');
+const createLicense = require('./creates/CreateLicense');
 // search or creates
 const searchOrCreateProduct = require('./search_or_creates/SearchOrCreateProduct');
 const searchOrCreateLicensee = require('./search_or_creates/SearchOrCreateLicensee');
@@ -58,6 +59,7 @@ const App = {
     creates: {
         [createProduct.key]: createProduct,
         [createLicensee.key]: createLicensee,
+        [createLicense.key]: createLicense,
     },
 
     searchOrCreates: {
