@@ -1,6 +1,7 @@
 module.exports = Object.freeze({
     BASE_HOST: 'https://go.netlicensing.io',
     BASE_PATH: '/core/v2/rest',
+    // TODO(RVA): a permanent API key is needed, now the API key can be removed since it was created on a demo account
     NLIC_APIKEY_TEST: 'c52d947d-548c-42a5-8908-d26e240addbc',
     authentication: {
         LOGIN_FAILED_TEXT: 'The APIKey you supplied is incorrect',
