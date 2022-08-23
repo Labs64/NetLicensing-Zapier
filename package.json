@@ -20,17 +20,19 @@
   },
   "dependencies": {
     "netlicensing-client": "^1.2.30",
-    "zapier-platform-core": "10.0.0"
+    "zapier-platform-core": "^12.0.3"
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.18.1",
+    "axios": "^0.27.2",
+    "axios-mock-adapter": "^1.21.2",
     "eslint": "^7.2.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-mocha": "^7.0.1",
-    "guidechimp": "^1.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "guidechimp": "^4.2.4",
     "lodash": "^4.17.21",
-    "mocha": "^8.0.1",
+    "mocha": "^10.0.0",
+    "nock": "^13.2.9",
     "should": "^13.2.3"
   }
 }
