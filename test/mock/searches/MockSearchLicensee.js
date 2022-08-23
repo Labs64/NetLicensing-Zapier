@@ -3,8 +3,10 @@ const { Service } = require('netlicensing-client/dist/netlicensing-client.node')
 const AxiosMockAdapter = require('axios-mock-adapter');
 const constants = require('../../../config/Constants');
 const App = require('../../../index');
-const response = require('../response');
-const error = require('../error');
+const Response = require('../response/index');
+const Item = require('../response/Item');
+const Info = require('../response/Info');
+const should = require('should');
 
 const appTester = zapier.createAppTester(App);
 
@@ -30,11 +32,11 @@ describe('Search Licensee', () => {
 
         // configure mock for get request
         mock.onGet(`${baseUrl}/licensee/${licensee.number}`)
-            .reply(200, response(licensee));
+            .reply(200, new Response(new Item(licensee, 'Licensee')));
 
         const results = await appTester(App.searches.search_licensee.operation.perform, bundle);
 
-        results.should.eql([licensee]);
+        should(results).eql([licensee]);
     });
 
     it('Not Existing Licensee', async () => {
@@ -47,13 +49,12 @@ describe('Search Licensee', () => {
 
         // configure mock for get request
         mock.onGet(`${baseUrl}/licensee/${licensee.number}`)
-            .reply(400, error(['NotFoundException', 'Requested licensee does not exist.']));
+            .reply(400, new Response(new Info('Requested licensee does not exist.', 'NotFoundException')));
 
         try {
             await appTester(App.searches.search_licensee.operation.perform, bundle);
         } catch (e) {
-            e.message.should.containEql('Requested licensee does not exist.');
+            should(e.infos[0].value).containEql('Requested licensee does not exist.');
         }
     });
-
 });
