@@ -3,8 +3,6 @@ const { Service } = require('netlicensing-client/dist/netlicensing-client.node')
 const AxiosMockAdapter = require('axios-mock-adapter');
 const constants = require('../../../config/Constants');
 const App = require('../../../index');
-const response = require('../response');
-const error = require('../error');
 
 const appTester = zapier.createAppTester(App);
 
@@ -51,5 +49,4 @@ describe('New Product', () => {
 
         results.length.should.above(0);
     });
-
 });
