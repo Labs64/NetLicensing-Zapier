@@ -39,5 +39,4 @@ describe('Create Licensee', () => {
         results.should.have.property('name');
 */
     });
-
 });

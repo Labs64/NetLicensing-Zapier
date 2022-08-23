@@ -38,5 +38,4 @@ describe('Create Product', () => {
 
         results.should.have.property('name');
     });
-
 });
