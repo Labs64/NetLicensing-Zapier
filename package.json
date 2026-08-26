@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "netlicensing-client": "^1.2.40",
-    "zapier-platform-core": "12.0.3"
+    "zapier-platform-core": "19.1.0"
   },
   "devDependencies": {
     "axios": "^1.19.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-mocha": "^10.1.0",
     "guidechimp": "^4.2.4",
-    "lodash": "^4.17.21",
+    "lodash": "^4.18.1",
     "mocha": "^10.8.2",
     "nock": "^13.2.9",
     "should": "^13.2.3"
